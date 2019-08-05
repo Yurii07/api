@@ -5,7 +5,7 @@ export default function mainFunc() {
 
         var param = document.getElementById('search_str').value;
         const Http = new XMLHttpRequest();
-        const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + param + '&units=metric' + '&APPID=a701373c514912374872f7a940df00a7';
+        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + param + '&units=metric' + '&APPID=a701373c514912374872f7a940df00a7';
 
         Http.open("GET", url);
         Http.send();
@@ -30,7 +30,7 @@ export default function mainFunc() {
 
 //Выводим флаг стран
             var res = respJSON.sys.country.toLowerCase();
-            var resFlags = document.getElementById('flags').setAttribute('src', "http://openweathermap.org/images/flags/" + res + ".png");
+            var resFlags = document.getElementById('flags').setAttribute('src', "https://openweathermap.org/images/flags/" + res + ".png");
 
             // console.log(respJSON.sys.country)
 
@@ -53,10 +53,10 @@ export default function mainFunc() {
             initMap(respJSON.coord.lon, respJSON.coord.lat);
             console.log(coordLon, coordLat);
 
-            response.innerHTML = "<h2 style='font-size:20px;'>Current Weather in: " + "<img src='http://openweathermap.org/images/flags/" + res + ".png'>&nbsp;" + cityName + " ," + countryn + "</h2>" +
+            response.innerHTML = "<h2 style='font-size:20px;'>Current Weather in: " + "<img src='https://openweathermap.org/images/flags/" + res + ".png'>&nbsp;" + cityName + " ," + countryn + "</h2>" +
 
                 "<div class='row'> <div class='col-sm-6 text-right'><strong>Weather:</strong> </div><div class='col-sm-6 text-left'>" + weatherMain + "</div></div>" +
-                "<div class='row'> <div class='col-sm-6 text-right cw'><strong>Description:</strong> </div><div class='col-sm-6 text-left'><img src='http://openweathermap.org/img/w/" + icon + ".png '>  " + description + "</div></div>" +
+                "<div class='row'> <div class='col-sm-6 text-right cw'><strong>Description:</strong> </div><div class='col-sm-6 text-left'><img src='https://openweathermap.org/img/w/" + icon + ".png '>  " + description + "</div></div>" +
                 "<div class='row'> <div class='col-sm-6 text-right'><strong>Temperature: </strong></div><div class='col-sm-6 text-left'>" + mainTemp + "&deg;C</div></div>" +
                 "<div class='row'> <div class='col-sm-6 text-right'><strong>Pressure: </strong></div><div class='col-sm-6 text-left'>" + pressure + " hPa</div></div>" +
                 "<div class='row'> <div class='col-sm-6 text-right'><strong>Humidity: </strong></div><div class='col-sm-6 text-left'>" + humidity + "%</div></div>" +
