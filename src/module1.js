@@ -5,7 +5,7 @@ export default function mainFunc() {
 
         var param = document.getElementById('search_str').value;
         const Http = new XMLHttpRequest();
-        const url = 'http' + 's'+'://api.openweathermap.org/data/2.5/weather?q=' + param + '&units=metric' + '&APPID=a701373c514912374872f7a940df00a7';
+        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + param + '&units=metric' + '&APPID=a701373c514912374872f7a940df00a7';
 
         Http.open("GET", url);
         Http.send();
